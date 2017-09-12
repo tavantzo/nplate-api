@@ -1,0 +1,14 @@
+version: '2.0'
+
+services:
+  mongo:
+    image: mongo:3.2
+    restart: unless-stopped
+    ports:
+      - "7017:27017"
+    volumes:
+      - "./mongo/data:/data/db"
+      - "./mongo/config:/data/configdb"
+
+volumes:
+  mongo:
